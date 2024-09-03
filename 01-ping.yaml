@@ -1,5 +1,4 @@
 
-
 - Name: ping the server
   Hosts: web # which hosts your ansible wants to connect
   Tasks: #lists of tasks/modules/collections
