@@ -10,6 +10,7 @@
       name: nginx
       state: present
     while: ansible_os_family == "redhat"
+    
   - name: nginx install if Debain
     ansible.builtin.apt:
       name: nginx
