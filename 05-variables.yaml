@@ -6,7 +6,7 @@
     TRAINER: "siva kumar reddy"
   tasks:
   - name: print the information
-    ansible.buildin.debug:
+    ansible.builtin.debug:
       msg: "Hi, I am learning {{ COURSE }}, Duartion is: {{DURATION }}, trainer: {{ TRAINER}}"
 
 
