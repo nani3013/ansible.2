@@ -1,7 +1,4 @@
 
-
-    
-
 - name: variables from files
   hosts: web
   vars_files:
