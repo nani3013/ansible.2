@@ -1,4 +1,4 @@
-- name: install nginx and run
+- name: nginx install and run
   hosts: web
   become: yes # take the access
   tasks:
