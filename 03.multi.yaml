@@ -1,16 +1,16 @@
 #PLAY-01
-- Name: PLAY-01
-  Hosts: web
+- name: PLAY-01
+  hosts: web
   tasks:
-  - Name: PLAY-01 TASK-01
+  - name: PLAY-01 TASK-01
     ansible.builtin.debug:
-    msg: " this is from PLAY-01 and TASK-01"
+      msg: " this is from PLAY-01 and TASK-01"
 
 
 # PLAY-02
-- Name: PLAY-02
+- name: PLAY-02
   Hosts: web
   tasks:
   - Name: PLAY-02 TASK-01
     ansible.builtin.debug:
-    msg: " this is from PLAY-02 and TASK-01"
+      msg: " this is from PLAY-02 and TASK-01"
