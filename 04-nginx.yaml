@@ -1,0 +1,14 @@
+- name: install nginx and run
+  hosts: web
+  become: yes # take the access
+  tasks:
+  - name: install nginx
+    ansible.builtin.package: # heterogenous module that can work for all distros
+      name: nginx
+      state: presnt
+
+  - name: run nginx
+    ansible.buildin.service:
+      name: nginx
+      state: started
+      enabled: yes    

@@ -1,0 +1,27 @@
+- name: variables to print
+  hosts: web
+  vars: #play level,all tasks in this play have access to this
+    COURSE: " devops with aws"
+    DURATION: "120HRS"
+    TRAINER: "siva kumar reddy"
+  tasks:
+  - name: print the information
+    ansible.buildin.debug:
+    msg: "hi, iam learing {{ COURSE }}, duartion is {{DURATION }}, trainer is {{ TRAINER}}"
+
+
+
+
+
+- name: print the information again
+  vars: #task level variables override playlevel
+    COURES: "ansible"
+    ansible.buildin.debug:
+    msg: "hi, iam learing {{ COURSE }}, duartion is {{DURATION }}, trainer is {{ TRAINER}}"
+
+
+- name: print the information again and again
+    ansible.builtin.debug:
+    msg: "Hi, I am learning {{COURSE}}, Duration is: {{DURATION}}, Trainer: {{TRAINER}}"    
+
+
