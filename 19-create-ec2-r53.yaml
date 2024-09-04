@@ -2,7 +2,7 @@
   hosts: local
   connection: local
   vars: 
-    subnet_id: subnet-03ded57fdcdbe554b
+    subnet_id: subnet-03ded57fdcdbe554b # replace with your subnet id
     sg_id: "sg-09c170b37b62b14a6"
     ami_id: "ami-09c813fb71547fc4f"
     instances:
