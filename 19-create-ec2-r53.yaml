@@ -27,20 +27,36 @@
       msg: "{{ ec2_instances }}"
 
 
-
-
-
-  - name: create r53 records
+   #private IP R53
+  - name: create r53 private records
     amazon.aws.route53:
       state: present
       zone: "{{ zone }}"
-      record: "{{ item.item }}.{{ zone }}" #mysql.nani30.online
+      record: "{{ item.item }}.{{ zone }}" #mysql.daws81s.online
       type: A
       ttl: 1
-      value: "{{ item.instancess[0].private_ip_address }}"
+      value: "{{ item.instances[0].private_ip_address }}"
       wait: true
       overwrite: true
-    loop: "{{ ec2_instances.results }}" 
+    loop: "{{ ec2_instances.results }}"
+
+  - name: create r53 public record for frontend
+    amazon.aws.route53:
+      state: present
+      zone: "{{ zone }}"
+      record: "{{ zone }}" #nani.online
+      type: A
+      ttl: 1
+      value: "{{ item.instances[0].public_ip_address }}"
+      wait: true
+      overwrite: true
+    loop: "{{ ec2_instances.results }}"
+    when: item.item == "frontend"
+
+
+
+
+
 
 
 
