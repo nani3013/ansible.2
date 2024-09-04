@@ -31,7 +31,7 @@
     amazon.aws.route53:
       state: present
       zone: "{{ zone }}"
-      record: "{{ item.item }}.{{ zone}}" #mysql.nani30.online
+      record: "{{ item.item }}.{{ zone }}" #mysql.nani30.online
       type: A
       ttl: 1
       value: "{{ item.instancess[0].private_ip_address }}"
